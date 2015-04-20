@@ -1,0 +1,10 @@
+{
+  "name": "AKQATest",
+  "private": true,
+  "dependencies": {
+    "modernizr": "~2.6.2",
+    "handlebars": "~2.0.0",
+    "jquery": "1.11.1"
+  },
+  "devDependencies": {}
+}

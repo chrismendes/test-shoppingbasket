@@ -1,0 +1,78 @@
+// ---
+// My Mini Grid System
+// ---
+$column-width: 60px;
+$column-gutter: 20px;
+
+@mixin columns($n) {
+    width: ($column-width * $n) + $column-gutter * ($n - 1);
+    margin-left: $column-gutter;
+}
+
+@mixin column-start-width($offset, $columns) {
+    margin-left: ($column-width + $column-gutter) * $offset;
+    margin-right: ($column-width + $column-gutter) * (12 - ($offset + $columns));
+}
+
+.l-container {
+    padding: 0px 40px;
+    margin: 0px auto;
+    width: 940px;
+
+    @media screen and (max-width: #{$screen-sm})  { // Below desktop
+        width: auto;
+    }
+}
+
+.l-row {
+    width: 100%;
+    clear: both;
+}
+
+.l-col-1 {
+    @include columns(1);
+}
+.l-col-2 {
+    @include columns(2);
+}
+.l-col-3 {
+    @include columns(3);
+}
+.l-col-4 {
+    @include columns(4);
+}
+.l-col-5 {
+    @include columns(5);
+}
+.l-col-6 {
+    @include columns(6);
+}
+.l-col-7 {
+    @include columns(7);
+}
+.l-col-8 {
+    @include columns(8);
+}
+.l-col-9 {
+    @include columns(9);
+}
+.l-col-10 {
+    @include columns(10);
+}
+.l-col-11 {
+    @include columns(11);
+}
+.l-col-12 {
+    @include columns(12);
+}
+
+div[class*="l-col-"] {
+    float: left;
+    &:first-child {
+        margin-left: 0px;
+    }
+
+    @media screen and (max-width: #{$screen-sm}) { // Tablet/Phone
+        width: 100%;
+    }
+}

@@ -1,0 +1,39 @@
+html, body {
+    margin: 0px;
+    padding: 0px;
+}
+
+html {
+    height: 100%;
+    background-color: #DADADA;
+}
+
+body {
+    font-family: 'Droid Serif', serif;
+    font-size: 112%;
+    background-image: linear-gradient(#FFFFFF, #DADADA);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#FFFFFF, endColorstr=#DADADA)"; // IE 8/9
+    overflow-x: hidden;
+}
+
+
+// ---
+// Typeface
+// ---
+h1 {
+    font-size: 163%;
+    letter-spacing: -1px;
+    margin: 0px 0px 12px 0px;
+    text-shadow: 1px 2px #D1D1D1;
+    filter: progid:DXImageTransform.Microsoft.Shadow(color=#D1D1D1,direction=-225,strength=3,positive=1); // IE 8/9
+}
+
+p, span {
+    font-size: 100%;
+    letter-spacing: -1px;
+}
+
+input[type=text], input[type=number] {
+    border: 1px solid #999999;
+    font-size: 100%;
+}

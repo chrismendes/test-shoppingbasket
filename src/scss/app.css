@@ -1,0 +1,346 @@
+html, body {
+  margin: 0px;
+  padding: 0px; }
+
+html {
+  height: 100%;
+  background-color: #DADADA; }
+
+body {
+  font-family: 'Droid Serif', serif;
+  font-size: 112%;
+  background-image: linear-gradient(#FFFFFF, #DADADA);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#FFFFFF, endColorstr=#DADADA)";
+  overflow-x: hidden; }
+
+h1 {
+  font-size: 163%;
+  letter-spacing: -1px;
+  margin: 0px 0px 12px 0px;
+  text-shadow: 1px 2px #D1D1D1;
+  filter: progid:DXImageTransform.Microsoft.Shadow(color=#D1D1D1,direction=-225,strength=3,positive=1); }
+
+p, span {
+  font-size: 100%;
+  letter-spacing: -1px; }
+
+input[type=text], input[type=number] {
+  border: 1px solid #999999;
+  font-size: 100%; }
+
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+*/
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+*/
+.l-container {
+  padding: 0px 40px;
+  margin: 0px auto;
+  width: 940px; }
+  @media screen and (max-width: 768px) {
+    .l-container {
+      width: auto; } }
+
+.l-row {
+  width: 100%;
+  clear: both; }
+
+.l-col-1 {
+  width: 60px;
+  margin-left: 20px; }
+
+.l-col-2 {
+  width: 140px;
+  margin-left: 20px; }
+
+.l-col-3 {
+  width: 220px;
+  margin-left: 20px; }
+
+.l-col-4 {
+  width: 300px;
+  margin-left: 20px; }
+
+.l-col-5 {
+  width: 380px;
+  margin-left: 20px; }
+
+.l-col-6 {
+  width: 460px;
+  margin-left: 20px; }
+
+.l-col-7 {
+  width: 540px;
+  margin-left: 20px; }
+
+.l-col-8 {
+  width: 620px;
+  margin-left: 20px; }
+
+.l-col-9 {
+  width: 700px;
+  margin-left: 20px; }
+
+.l-col-10 {
+  width: 780px;
+  margin-left: 20px; }
+
+.l-col-11 {
+  width: 860px;
+  margin-left: 20px; }
+
+.l-col-12 {
+  width: 940px;
+  margin-left: 20px; }
+
+div[class*="l-col-"] {
+  float: left; }
+  div[class*="l-col-"]:first-child {
+    margin-left: 0px; }
+  @media screen and (max-width: 768px) {
+    div[class*="l-col-"] {
+      width: 100%; } }
+
+.l-page-narrow {
+  margin-left: 240px;
+  margin-right: 160px; }
+  @media screen and (max-width: 992px) {
+    .l-page-narrow {
+      margin-left: 80px;
+      margin-right: 80px; } }
+  @media screen and (max-width: 768px) {
+    .l-page-narrow {
+      margin-left: 0px;
+      margin-right: 0px; } }
+
+.header {
+  padding: 130px 0px 64px 0px; }
+  @media screen and (max-width: 768px) {
+    .header {
+      padding: 40px 0px 30px 0px; } }
+
+.footer {
+  height: 33px;
+  padding-top: 7px;
+  background: #666666;
+  border-top: 1px solid #000000;
+  margin-top: 138px;
+  width: 100%;
+  float: left; }
+  .footer span {
+    font-family: 'Droid Sans', sans-serif;
+    font-size: 61%;
+    color: #FFFFFF;
+    letter-spacing: 0px; }
+    .footer span strong {
+      margin-left: 3px; }
+  @media screen and (max-width: 768px) {
+    .footer {
+      margin-top: 30px; }
+      .footer span {
+        font-size: 55%; } }
+
+.page-heading {
+  min-height: 143px; }
+  .page-heading .description p {
+    font-size: 81%;
+    margin: 0px 0px 0px 1px; }
+    .page-heading .description p.error {
+      color: #FF0000;
+      margin-top: 20px; }
+      .page-heading .description p.error.is-hidden {
+        display: none; }
+  .page-heading .description.is-hidden {
+    display: none; }
+
+.basket {
+  margin-left: -20px;
+  margin-bottom: 50px;
+  float: left; }
+  .basket .basket-products-labels {
+    float: left;
+    border-bottom: 2px solid #787878;
+    margin-bottom: 9px;
+    padding-right: 20px; }
+    .basket .basket-products-labels .column-product {
+      margin-left: 20px; }
+    .basket .basket-products-labels span {
+      font-weight: bold; }
+    @media screen and (max-width: 768px) {
+      .basket .basket-products-labels {
+        display: none; } }
+  .basket .basket-products-items {
+    float: left;
+    margin-bottom: 20px; }
+    .basket .basket-products-items .basket-empty-msg {
+      font-size: 78%;
+      text-align: center; }
+      .basket .basket-products-items .basket-empty-msg.is-hidden {
+        display: none; }
+    .basket .basket-products-items .item {
+      float: left;
+      clear: both;
+      overflow: hidden;
+      transition: opacity 1s;
+      transition: height 0.3s;
+      height: 49px; }
+      .basket .basket-products-items .item.item-alt {
+        background: #DDDDDD; }
+      .basket .basket-products-items .item.is-removed {
+        opacity: 0;
+        height: 0px; }
+      .basket .basket-products-items .item .quantity {
+        margin: -4px auto 0px auto; }
+        .basket .basket-products-items .item .quantity input[type=text], .basket .basket-products-items .item .quantity input[type=number] {
+          width: 30px;
+          height: 20px;
+          text-align: right;
+          padding: 4px;
+          float: left; }
+          .basket .basket-products-items .item .quantity input[type=text].is-error, .basket .basket-products-items .item .quantity input[type=number].is-error {
+            border: 1px solid #FF0000; }
+        .basket .basket-products-items .item .quantity .quantity-change {
+          width: 16px;
+          float: right; }
+          .basket .basket-products-items .item .quantity .quantity-change a {
+            height: 14px;
+            width: 100%;
+            background: #999;
+            display: block;
+            color: #fff;
+            font-size: 80%;
+            line-height: 14px;
+            text-decoration: none; }
+            .basket .basket-products-items .item .quantity .quantity-change a:first-child {
+              margin-bottom: 2px; }
+      .basket .basket-products-items .item .remove-item {
+        background-image: url(../images/spritesheet.png);
+        background-position: -16px 0px;
+        width: 16px;
+        height: 22px;
+        display: inline-block;
+        margin-left: 11px;
+        margin-top: -1px; }
+        .basket .basket-products-items .item .remove-item:hover {
+          background-image: url(../images/spritesheet.png);
+          background-position: 0px 0px;
+          width: 16px;
+          height: 22px; }
+      .basket .basket-products-items .item div[class*="column-"] {
+        padding: 16px 0px 13px 0px; }
+        .basket .basket-products-items .item div[class*="column-"]:first-child {
+          padding-left: 20px; }
+      .basket .basket-products-items .item .mobile-only {
+        display: none; }
+  .basket .column-price, .basket .column-cost {
+    text-align: right; }
+  .basket .column-quantity {
+    text-align: center; }
+  .basket .basket-totals {
+    margin-top: 17px;
+    padding-left: 20px;
+    float: left; }
+    .basket .basket-totals .line-item {
+      float: left;
+      clear: both;
+      margin-bottom: 3px; }
+      .basket .basket-totals .line-item span {
+        color: #666; }
+      .basket .basket-totals .line-item .amount {
+        float: right; }
+      .basket .basket-totals .line-item.line-item-grandtotal {
+        margin-top: 24px; }
+        .basket .basket-totals .line-item.line-item-grandtotal span {
+          color: #000;
+          font-weight: bold; }
+  .basket .basket-continue {
+    float: right;
+    margin-top: 62px;
+    padding-left: 20px; }
+    .basket .basket-continue a {
+      font-family: 'Droid Sans', sans-serif;
+      font-size: 130%;
+      font-weight: bold;
+      color: #fff;
+      padding: 12px 6px 12px 9px;
+      background: #000166;
+      text-decoration: none;
+      border-radius: 10px;
+      box-shadow: 5px 5px 5px 0px #787878; }
+      .basket .basket-continue a:hover {
+        background: #3134FF; }
+      .basket .basket-continue a.is-disabled {
+        background: #C0C0C0;
+        box-shadow: 5px 5px 5px 0px #CCCCCC; }
+  .basket.is-disabled .basket-products-items .item .quantity input[type=text], .basket.is-disabled .basket-products-items .item .quantity input[type=number] {
+    color: #666666;
+    background: #C0C0C0; }
+  .basket.is-disabled .basket-products-items .item .remove-item {
+    display: none; }
+
+@media screen and (max-width: 768px) {
+  .basket .basket-products-items .item {
+    height: auto;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #C0C0C0; }
+    .basket .basket-products-items .item.is-removed {
+      padding-bottom: 0px;
+      margin-bottom: 0px; }
+    .basket .basket-products-items .item .column-product {
+      width: 100%;
+      font-weight: bold; }
+    .basket .basket-products-items .item .column-price, .basket .basket-products-items .item .column-quantity, .basket .basket-products-items .item .column-cost, .basket .basket-products-items .item .column-remove {
+      text-align: left;
+      width: 22%; }
+      .basket .basket-products-items .item .column-price .quantity, .basket .basket-products-items .item .column-quantity .quantity, .basket .basket-products-items .item .column-cost .quantity, .basket .basket-products-items .item .column-remove .quantity {
+        margin: 0px; }
+    .basket .basket-products-items .item .column-remove {
+      width: 10%;
+      float: right; }
+    .basket .basket-products-items .item .mobile-only {
+      display: inline; }
+    .basket .basket-products-items .item .desktop-only {
+      display: none; }
+  .basket .basket-totals {
+    width: 100%; }
+    .basket .basket-totals .line-item {
+      width: 100%; }
+      .basket .basket-totals .line-item div[class*="column-"] {
+        width: 45%; } }
+
+@media screen and (max-width: 768px) and (min-width: 480px) {
+  .basket .basket-products-items .item .column-quantity .quantity .mobile-label {
+    float: left;
+    margin-right: 10px; }
+  .basket .basket-products-items .item .column-remove .remove-item {
+    margin-top: 0px; } }
+
+@media screen and (max-width: 480px) {
+  .basket .basket-products-items .item .column-price, .basket .basket-products-items .item .column-quantity, .basket .basket-products-items .item .column-cost {
+    width: 18%; }
+    .basket .basket-products-items .item .column-price .quantity .mobile-label, .basket .basket-products-items .item .column-quantity .quantity .mobile-label, .basket .basket-products-items .item .column-cost .quantity .mobile-label {
+      width: 100%; }
+  .basket .basket-products-items .item .column-remove {
+    width: 10%; }
+    .basket .basket-products-items .item .column-remove .remove-item {
+      margin-top: 40px; }
+  .basket .basket-products-items .item .mobile-only.mobile-label {
+    display: inline-block;
+    margin-bottom: 20px; } }

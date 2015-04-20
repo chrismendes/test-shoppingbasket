@@ -1,0 +1,13 @@
+// ---
+// Narrow - 3 columns in from left, 2 right
+// ---
+.l-page-narrow {
+    @include column-start-width(3, 7);
+
+    @media screen and (max-width: #{$screen-md}) { // Small desktop
+        @include column-start-width(1, 10);
+    }
+    @media screen and (max-width: #{$screen-sm}) { // Tablet/Phone
+        @include column-start-width(0, 12);
+    }
+}

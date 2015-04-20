@@ -1,0 +1,20 @@
+// ---
+// Core
+// ---
+@import 'core/base.scss';
+@import 'core/variables.scss';
+@import 'core/sprites.scss';
+
+// ---
+// Layout
+// ---
+@import 'layout/grid.scss';
+@import 'layout/pages.scss';
+
+// ---
+// Modules
+// ---
+@import 'modules/header.scss';
+@import 'modules/footer.scss';
+@import 'modules/page-heading.scss';
+@import 'modules/basket.scss';

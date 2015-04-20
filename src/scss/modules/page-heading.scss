@@ -1,0 +1,22 @@
+.page-heading {
+    min-height: 143px;
+
+    .description {
+        p {
+            font-size: 81%;
+            margin: 0px 0px 0px 1px;
+
+            &.error {
+                color: #FF0000;
+                margin-top: 20px;
+                &.is-hidden {
+                    display: none;
+                }
+            }
+        }
+
+        &.is-hidden {
+            display: none;
+        }
+    }
+}

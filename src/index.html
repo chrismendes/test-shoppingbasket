@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if IE 9]>         <html class="no-js lt-ie10"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <title>Chris Mendes | Freelance Front-end Web Developer</title>
+    <meta name="description" content="Shopping Basket Application (Sample Code)"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta charset="utf-8"/>
+
+    <!-- build:css css/app.css -->
+    <link rel="stylesheet" href="scss/app.css"/>
+    <!-- endbuild -->
+
+    <link href="http://fonts.googleapis.com/css?family=Droid+Sans:400,700%7CDroid+Serif:400,700" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+
+    <div class="l-container">
+      <div class="l-page-narrow">
+
+        <div class="l-row">
+          <div class="header"> <!-- Would ordinarily use <header> and HTML5shiv for IE7/8 support -->
+            <span>Shop Logo</span>
+          </div>
+        </div>
+
+        <div class="l-row">
+          <div class="page-heading">
+            <h1>Your Basket</h1>
+            <div class="description js-helptext-default">
+              <p>Items you have added to your basket are shown below.</p>
+              <p>Adjust the quantities or remove items before continuing your purchase.</p>
+              <p class="error is-hidden js-msg-quantity-error">Please enter a valid quantity (1-10).</p>
+            </div>
+            <div class="description is-hidden js-helptext-empty">
+              <p>Your basket is empty (Refresh app to start again).</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="l-row">
+          <div class="basket js-basket">
+            <!-- Would ordinarily use Require.js and place templates into separate HTML files -->
+            <script id="template-basket" type="text/x-handlebars-template">
+              <div class="basket-products">
+                <div class="basket-products-labels">
+                  <div class="l-col-3 column-product">
+                    <span>Product</span>
+                  </div>
+                  <div class="l-col-1 column-price">
+                    <span>Price</span>
+                  </div>
+                  <div class="l-col-1 column-quantity">
+                    <span>Qty</span>
+                  </div>
+                  <div class="l-col-1 column-cost">
+                    <span>Cost</span>
+                  </div>
+                </div>
+                <div class="basket-products-items">
+                  {{#each items}}
+                  {{#everyOther @index 2 }}
+                  <div class="item item-alt js-item" data-id="{{id}}">
+                  {{else}}
+                  <div class="item js-item" data-id="{{id}}">
+                  {{/everyOther}}
+                    <div class="l-col-3 column-product">
+                      <span>{{name}}, {{size}}</span>
+                    </div>
+                    <div class="l-col-1 column-price">
+                      <span class="mobile-only mobile-label">Price</span>
+                      <span>&pound;{{decimalPlaces price}}</span>
+                    </div>
+                    <div class="l-col-1 column-quantity">
+                      <div class="quantity">
+                        <span class="mobile-only mobile-label">Qty</span>
+                        <input type="text" value="{{quantity}}" maxlength="2" class="js-item-quantity"/>
+                        <!--<input type="number" value="{{quantity}}" class="mobile-only js-item-quantity"/>-->
+                        <div class="quantity-change desktop-only">
+                          <a href="#" class="js-item-quantity-plus">+</a>
+                          <a href="#" class="js-item-quantity-minus">-</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="l-col-1 column-cost">
+                      <span class="mobile-only mobile-label">Cost</span>
+                      <span class="js-item-cost">&pound;{{decimalPlaces cost}}</span>
+                    </div>
+                    <div class="l-col-1 column-remove">
+                      <a href="#" class="remove-item js-item-remove"></a>
+                    </div>
+                  </div>
+                  {{/each}}
+                </div>
+              </div>
+              <div class="basket-totals">
+                <div class="line-item">
+                  <div class="l-col-5 column-subtotal-label">
+                    <span class="label">Subtotal</span>
+                  </div>
+                  <div class="l-col-1 column-subtotal">
+                    <span class="amount js-subtotal">&pound;{{decimalPlaces subtotal}}</span>
+                  </div>
+                </div>
+                <div class="line-item">
+                  <div class="l-col-5 column-vat-label">
+                    <span class="label">VAT @ {{vatRate}}%</span>
+                  </div>
+                  <div class="l-col-1 column-vat">
+                    <span class="amount js-vat">&pound;{{decimalPlaces vat}}</span>
+                  </div>
+                </div>
+                <div class="line-item line-item-grandtotal">
+                  <div class="l-col-5 column-total-label">
+                    <span class="label">Total Cost</span>
+                  </div>
+                  <div class="l-col-1 column-total">
+                    <span class="amount js-total">&pound;{{decimalPlaces total}}</span>
+                  </div>
+                </div>
+              </div>
+              <div class="l-col-6">
+                <div class="basket-continue">
+                  <a href="#" class="js-continue"><span>Buy Now &raquo;</span></a>
+                </div>
+              </div>
+            </script>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer"> <!-- Would ordinarily use <footer> and HTML5shiv for IE7/8 support -->
+      <div class="l-container">
+        <div class="l-page-narrow">
+          <div class="l-row">
+            <div class="l-col-12">
+              <span><strong>&copy; 2013 AKQA Ltd.</strong> Registered in England: 2964394</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- build:js js/vendor.js -->
+    <script src="libs/jquery/dist/jquery.js"></script>
+    <script src="libs/handlebars/handlebars.js"></script>
+    <script src="libs/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:js js/app.js -->
+    <script src="js/model.js"></script>
+    <script src="js/controller.js"></script>
+    <script src="js/view.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/main.js"></script>
+    <!-- endbuild -->
+
+  </body>
+</html>
