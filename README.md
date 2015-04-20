@@ -1,6 +1,8 @@
 # Sample Application - Shopping Basket
 
-  > A previous code test for an interview, the task was to implement the required shopping basket functionality and match a PSD design without the use of any framework or grid system. Run the app at: http://shoppingbasket.chrismendes.london
+  > A previous code test for an interview, the task was to implement the required shopping basket functionality and match a PSD design without the use of any framework or grid system.
+
+  > Run the app at: http://shoppingbasket.chrismendes.london
 
 ## Overview
 
