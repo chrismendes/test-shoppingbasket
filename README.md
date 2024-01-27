@@ -1,4 +1,4 @@
-# Sample Application - Shopping Basket
+# Interview Test - Shopping Basket
 
   > A previous code test for an interview, the task was to implement the required shopping basket functionality and match a PSD design without the use of any framework or grid system.
 
